@@ -1,0 +1,120 @@
+// Layout
+$breakpoint-mobile: 375px;
+$breakpoint-desktop: 1440px;
+
+// Colors
+$primary--bright-orange: hsl(31, 77%, 52%);
+$primary--dark-cyan: hsl(184, 100%, 22%);
+$primary--very-dark-cyan: hsl(179, 100%, 13%);
+
+$neutral--transparent-white: hsla(0, 0%, 100%, 0.75);
+$neutral--very-light-gray: hsl(0, 0%, 95%);
+
+// Spacings
+$main-padding: 40px;
+
+// Borders
+$main--border-radius: 20px;
+
+// Font sizes
+$main-text-size: 15px;
+$titles-size: 30px;
+
+body {
+  font-size: $main-text-size;
+}
+
+@font-face {
+  font-family: "Lexend Deca";
+  src: url(../assets/fonts/LexendDeca-VariableFont_wght.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Big Shoulders";
+  src: url(../assets/fonts/BigShouldersDisplay-VariableFont_wght.ttf)
+    format("truetype");
+}
+
+.preview-cards--wrapper {
+  overflow: hidden;
+  border-radius: $main--border-radius;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  @media (max-width: $breakpoint-mobile) {
+    display: block;
+  }
+
+  .card {
+    padding: $main-padding;
+    min-width: 100px;
+
+    &.card-sedan {
+      background-color: $primary--bright-orange;
+    }
+
+    &.card-suv {
+      background-color: $primary--dark-cyan;
+    }
+
+    &.card-luxury {
+      background-color: $primary--very-dark-cyan;
+    }
+  }
+
+  .title {
+    font-family: "Big Shoulders", Impact, Arial, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: $titles-size;
+    color: $neutral--very-light-gray;
+  }
+
+  .description {
+    font-family: "Lexend Deca", Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    color: $neutral--transparent-white;
+
+    @media (max-width: $breakpoint-mobile) {
+      font-size: 14px;
+    }
+  }
+
+  .action-button {
+    font-family: "Lexend Deca", Arial, Helvetica, sans-serif;
+    background-color: $neutral--very-light-gray;
+    border-radius: 20px;
+    height: 40px;
+    min-width: 130px;
+    padding: 16px;
+    border: none;
+    width: 50%;
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: $breakpoint-mobile) {
+      margin-top: 20px;
+    }
+
+    &.button-sedan {
+      color: $primary--bright-orange;
+    }
+
+    &.button-suv {
+      color: $primary--dark-cyan;
+    }
+
+    &.button-luxury {
+      color: $primary--very-dark-cyan;
+    }
+
+    &:hover,
+    &:active {
+      background-color: transparent;
+      color: $neutral--very-light-gray;
+      border: 2px solid $neutral--very-light-gray;
+    }
+  }
+}
